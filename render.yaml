@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: my-nightscout-on-render
+    name: gorg-nightscout
     env: node
     region: oregon # optional (defaults to oregon. Other regions: ohio, frankfurt, singapore)
     plan: free # optional (defaults to starter - this a PAID PLAN, $7/month. https://render.com/pricing)
@@ -33,7 +33,7 @@ services:
       - key: ALARM_URGENT_LOW # Default setting for new browser views, for the Urgent Low alarm (triggered when BG crosses BG_LOW). ('on' or 'off')
         value: "on"
       - key: API_SECRET # A passphrase that must be at least 12 characters long. Avoid 'special' characters, which can cause problems in some cases.
-        generateValue: true
+        value: "tYRquRBQrxkG"
       - key: BG_HIGH # Urgent High BG threshold, triggers the ALARM_URGENT_HIGH alarm. Set in mg/dL or mmol/L, as set in DISPLAY_UNITS variable.
         value: "260"
       - key: BG_LOW # Urgent Low BG threshold, triggers the ALARM_URGENT_LOW alarm. Set in mg/dL or mmol/L, as set in DISPLAY_UNITS variable.
