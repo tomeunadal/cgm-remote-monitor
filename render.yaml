@@ -3,7 +3,7 @@ services:
     name: my-nightscout-on-render
     env: node
     region: oregon # optional (defaults to oregon. Other regions: ohio, frankfurt, singapore)
-    plan: starter # optional (defaults to starter - this a PAID PLAN, $7/month. https://render.com/pricing)
+    plan: free # optional (defaults to starter - this a PAID PLAN, $7/month. https://render.com/pricing)
     buildCommand: npm install
     startCommand: npm start
     healthCheckPath: /
@@ -13,7 +13,7 @@ services:
       - key: HOSTNAME # bind app to any internal IP
         value: "0.0.0.0"
       - key: MONGODB_URI # The MongoDB Connection String to connect to your MongoDB cluster. If you don't have this from MongoDB Atlas, please re-read installation instructions at http://nightscout.github.io/nightscout/new_user/ before continuing
-        sync: false # will be requested when Blueprint is created
+        value: "mongodb+srv://nightscout:jWmy0fGpd0Ye80cb@cluster0.yeq836o.mongodb.net/gorg?retryWrites=true&w=majority"
       - key: ALARM_HIGH # Default setting for new browser views, for the High alarm (triggered when BG crosses BG_TARGET_TOP). ('on' or 'off')
         value: "on"
       - key: ALARM_LOW # Default setting for new browser views, for the Low alarm (triggered when BG crosses BG_TARGET_BOTTOM). ('on' or 'off')
